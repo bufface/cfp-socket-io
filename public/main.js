@@ -44,4 +44,11 @@
   }
 
   build_cat();
+
+  var socket = io();
+  socket.on('connect', function () {
+    socket.on('init', function (data) {
+      console.log(data);
+    })
+  })
 })();
