@@ -3,14 +3,13 @@
   false => juega con los O
 */
 (function () {
-  var juego = false;
 
   function $(el) {
     return document.querySelector(el);
   }
 
   function jugar(elemento_seleccionado) {
-    if (juego) {
+    if (true) {
       elemento_seleccionado.innerHTML = 'X';
     } else {
       elemento_seleccionado.innerHTML = '0';
@@ -45,10 +44,5 @@
 
   build_cat();
 
-  var socket = io();
-  socket.on('connect', function () {
-    socket.on('init', function (data) {
-      juego = data.figure;
-    });
-  })
+  var socket = new Socket(1, 2, 3);
 })();
