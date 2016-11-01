@@ -1,4 +1,4 @@
-function Socket(movimiento, gano, reinicie) {
+function Socket(movimiento, nueva_jugada, reinicie) {
   var self = this;
   var juego = false;
 
@@ -20,5 +20,9 @@ function Socket(movimiento, gano, reinicie) {
     socket.on('init', function (data) {
       self.juego = data.figure;
     });
+
+    socket.on('movimiento', function(data) {
+      nueva_jugada(data.posicion, data.figura);
+    })
   });
 }

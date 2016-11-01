@@ -43,9 +43,16 @@
     return '<div class="cat-element col-xs-4" id="elemento-' + i + '"></div>'
   }
 
+  function convertir_a_figura(bandera) {
+    if (bandera) return 'X';
+    return '0'
+  }
+
   build_cat();
 
   var socket = new Socket(function (figura, posicion) {
     $('#elemento-' + posicion).innerHTML = figura;
-  }, 2, 3);
+  }, function (posicion, figura) {
+    $('#elemento-' + posicion).innerHTML = convertir_a_figura(figura);
+  }, null);
 })();
