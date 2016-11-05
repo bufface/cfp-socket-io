@@ -51,7 +51,7 @@
   build_cat();
 
   var socket = new Socket(function (figura, posicion) {
-    $('#elemento-' + posicion).innerHTML = figura;
+    // $('#elemento-' + posicion).innerHTML = figura;
   }, function (posicion, figura) {
     $('#elemento-' + posicion).innerHTML = convertir_a_figura(figura);
   }, null);
